@@ -1,5 +1,6 @@
 import 'reflect-metadata';
 import { DataSource } from 'typeorm';
+import { User, Event } from '../../src/entities';
 
 const AppDataSource = new DataSource({
   type: 'mysql',
@@ -10,7 +11,7 @@ const AppDataSource = new DataSource({
   database: process.env.MYSQLDB_DATABASE,
   synchronize: true,
   logging: true,
-  entities: [],
+  entities: [User, Event]
 });
 
 async function databaseInit() {
