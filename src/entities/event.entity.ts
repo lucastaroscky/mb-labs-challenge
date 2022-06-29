@@ -11,7 +11,7 @@ class Event {
   name: string;
 
   @Column({ type: 'longtext' })
-  dscription: string;
+  description: string;
 
   @Column()
   place: string;
