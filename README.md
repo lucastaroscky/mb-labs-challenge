@@ -1,5 +1,5 @@
 # Event Manager API
-
+____
 ## Technical description
 
 This app was created using [Node](https://nodejs.org/en/) + [express](https://expressjs.com/pt-br/), [TypeORM](https://typeorm.io/), and [MySQL](https://www.mysql.com/) database as main technologies.
@@ -8,10 +8,10 @@ Request body validation with [Joi](https://joi.dev/).
 
 ## App description
 
-This app has the intuite to manager events and connect users to events in companies or universities.
-
+This app has the intuite to manage events and connect users to events in companies or universities.
 
 ## Usage
+
 
 #### POST /user
 
@@ -32,7 +32,8 @@ This app has the intuite to manager events and connect users to events in compan
 }
 ```
 
-##### POST /auth
+
+#### POST /auth
 
 **Request body**
 
