@@ -20,7 +20,8 @@ This app has the intuite to manage events and connect users to events in compani
 ```
 {
   "email": "email@gmail.com.br",
-  "password": "123456"
+  "password": "123456",
+  "role": "user"
 }
 ```
 

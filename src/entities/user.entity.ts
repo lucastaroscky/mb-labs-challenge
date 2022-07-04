@@ -1,4 +1,5 @@
-import { Entity, Column, PrimaryGeneratedColumn, ManyToMany, JoinTable } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, ManyToMany, JoinTable, OneToMany } from 'typeorm';
+import { Roles } from '../enums/role.enum';
 import Event from './event.entity';
 
 @Entity('users')
@@ -12,9 +13,15 @@ class User {
   @Column()
   password: string;
 
+  @Column({ type: 'enum', default: Roles.USER, enum: Roles })
+  role: Roles;
+
   @ManyToMany(() => Event)
   @JoinTable()
   tickets: Event[];
+
+  @OneToMany(() => Event, event => event.createdBy)
+  list: Event[];
 }
 
 export default User;
