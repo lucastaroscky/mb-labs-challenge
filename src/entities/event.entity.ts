@@ -1,4 +1,4 @@
-import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, JoinColumn, ManyToOne, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 import { EventCategory } from '../enums/category.enum';
 import User from './user.entity';
 
@@ -19,7 +19,7 @@ class Event {
   @Column()
   date: string;
 
-  @Column()
+  @Column({ type: 'enum', default: EventCategory.BUSINESS, enum: EventCategory })
   category: EventCategory;
 
   @Column()
@@ -29,7 +29,11 @@ class Event {
   price: Number;
 
   @OneToMany(() => User, episode => episode.tickets, { eager: true })
-  users: User[]
+  users: User[];
+
+  @ManyToOne(() => User)
+  @JoinColumn()
+  createdBy: User;
 }
 
 export default Event;

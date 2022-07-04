@@ -5,13 +5,13 @@ import { User, Event } from '../../src/entities';
 export const AppDataSource = new DataSource({
   type: 'mysql',
   host: 'localhost',
-  port: 3306,
+  port: Number(process.env.MYSQLDB_LOCAL_PORT),
   username: process.env.MYSQLDB_USER,
   password: process.env.MYSQLDB_ROOT_PASSWORD,
   database: process.env.MYSQLDB_DATABASE,
+  entities: [User, Event],
   synchronize: true,
-  logging: true,
-  entities: [User, Event]
+  logging: true
 });
 
 async function databaseInit() {

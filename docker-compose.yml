@@ -14,6 +14,8 @@ services:
       - db:/var/lib/mysql
 
   back-end:
+    image: node:alpine
+    command: npm run start:dev
     depends_on:
       - mysqldb
     build: ./
@@ -35,6 +37,7 @@ services:
 networks:
   db:
   backend:
+
 
 volumes:
   db:

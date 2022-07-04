@@ -7,4 +7,4 @@ class BadRequestException extends HttpException {
   }
 }
 
-export default BadRequestException
+export default BadRequestException;
