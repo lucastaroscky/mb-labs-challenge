@@ -10,16 +10,12 @@ class EventService {
     this.eventRepository = AppDataSource.getRepository(Event);
   }
 
-  private async findOne(id: number) {
-    return this.eventRepository.findOne({ where: { id } });
-  }
-
   async list() {
     return this.eventRepository.find();
   }
 
   async listOne(id: number) {
-    const event = await this.findOne(id);
+    const event = await this.eventRepository.findOne({ where: { id } });
 
     if (!event) {
       throw new NotFoundException(`Event id ${id} was not found!`);

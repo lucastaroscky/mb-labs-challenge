@@ -29,7 +29,7 @@ const injectUser = async (request: CustomRequest, _response: CustomResponse, nex
 
   request.loggedUser = loggedUser;
 
-  next();
+  return next();
 };
 
 export default injectUser;

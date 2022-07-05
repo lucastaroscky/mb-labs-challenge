@@ -6,7 +6,18 @@ import EventService from '../../services/event/event.service';
 const eventService = new EventService();
 
 class EventController {
-  public static async list(request: Request, response: CustomResponse) {
+  public static async listOne(request: Request, response: CustomResponse) {
+    try {
+      const { params: { id } } = request;
+      const event = await eventService.listOne(+id);
+
+      response.status(HTTP_STATUS.OK).json(event);
+    } catch (err) {
+      response.errorHandler && response.errorHandler(err);
+    }
+  }
+
+  public static async list(_request: Request, response: CustomResponse) {
     try {
       const event = await eventService.list();
 
