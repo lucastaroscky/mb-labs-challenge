@@ -1,5 +1,6 @@
-import { Column, Entity, JoinColumn, ManyToOne, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, JoinTable, ManyToOne, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 import { EventCategory } from '../enums/category.enum';
+import Place from './place.entity';
 import User from './user.entity';
 
 @Entity('events')
@@ -13,8 +14,8 @@ class Event {
   @Column({ type: 'longtext' })
   description: string;
 
-  @Column()
-  place: string;
+  @ManyToOne(() => Place, place => place.eventPlace)
+  place: Place;
 
   @Column()
   date: string;
@@ -32,7 +33,7 @@ class Event {
   users: User[];
 
   @ManyToOne(() => User)
-  @JoinColumn()
+  @JoinTable()
   createdBy: User;
 }
 

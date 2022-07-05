@@ -21,6 +21,7 @@ class User {
   tickets: Event[];
 
   @OneToMany(() => Event, event => event.createdBy)
+  @JoinTable()
   list: Event[];
 }
 

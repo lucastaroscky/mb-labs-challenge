@@ -6,7 +6,7 @@ import UnauthorizedException from '../exceptions/unauthorized.exception';
 import CustomRequest from '../interfaces/custom-request.interface';
 import CustomResponse from '../interfaces/custom-response.interface';
 
-const injectUser = async (request: CustomRequest, response: CustomResponse, next: NextFunction) => {
+const injectUser = async (request: CustomRequest, _response: CustomResponse, next: NextFunction) => {
   const token = request.headers.authorization?.replace('Bearer ', '');
 
   if (!token) {
