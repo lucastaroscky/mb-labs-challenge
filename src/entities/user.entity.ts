@@ -1,5 +1,4 @@
 import { Entity, Column, PrimaryGeneratedColumn, ManyToMany, JoinTable } from 'typeorm';
-import { Roles } from '../enums/role.enum';
 import Event from './event.entity';
 
 @Entity('users')
@@ -12,9 +11,6 @@ class User {
 
   @Column()
   password: string;
-
-  @Column({ type: 'enum', enum: Roles })
-  role: Roles;
 
   @ManyToMany(() => Event, { eager: true })
   @JoinTable()

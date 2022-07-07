@@ -9,9 +9,9 @@ class UserController {
   public static async create(request: Request, response: CustomResponse) {
     try {
       const { body } = request;
-      const user = await userService.create(body);
+      const createdUser = await userService.create(body);
 
-      response.status(HTTP_STATUS.CREATED).json({ id: user.id, email: user.email });
+      response.status(HTTP_STATUS.CREATED).json(createdUser);
     } catch (err) {
       response.errorHandler && response.errorHandler(err);
     }
