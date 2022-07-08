@@ -12,7 +12,7 @@ This app has the intuite to manage events and connect users to events in compani
 
 ## Usage
 
-### Endpoint - /usr
+### Endpoint - /user
 
 #### POST /user
 
