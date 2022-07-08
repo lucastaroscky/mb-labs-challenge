@@ -21,8 +21,7 @@ This app has the intuite to manage events and connect users to events in compani
 ```
 {
   "email": "email@gmail.com.br",
-  "password": "123456",
-  "role": "user"
+  "password": "@Name123"
 }
 ```
 
@@ -41,7 +40,7 @@ This app has the intuite to manage events and connect users to events in compani
 ```
 {
   "email": "email@gmail.com.br",
-  "password": "123456"
+  "password": "@Name123"
 }
 ```
 
@@ -231,16 +230,16 @@ This app has the intuite to manage events and connect users to events in compani
 
 ```
 [
-    {
-        "id": 2,
-        "name": "A Great Event Name Changed",
-        "description": "This is a great event...",
-        "place": "Event Place, 123 - City/UF - Country",
-        "date": "2020-12-01",
-        "category": "UNIVERSITY",
-        "image": "image url",
-        "price": 321
-    },
-    {...}
+ {
+   "id": 2,
+   "name": "A Great Event Name Changed",
+   "description": "This is a great event...",
+   "place": "Event Place, 123 - City/UF - Country",
+   "date": "2020-12-01",
+   "category": "UNIVERSITY",
+   "image": "image url",
+   "price": 321
+ },
+ {...}
 ]
 ```
